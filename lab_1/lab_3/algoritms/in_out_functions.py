@@ -42,7 +42,7 @@ class Io:
     def __init__(self):
         pass
 
-    def read_json(path: str) -> dict:
+    def read_json(self, path: str) -> dict:
         """The function reads data from .json file
         Args:
             path(str): path to json file
@@ -52,7 +52,7 @@ class Io:
         with open(path, "r", encoding="UTF-8") as file:
             return json.load(file)
 
-    def write_txt(data: str, file_path: str) -> None:
+    def write_txt(self, data: str, file_path: str) -> None:
         """The function writes data into the file at the specified path
 
         Args:
@@ -65,7 +65,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while writing the file: {e}')
 
-    def read_txt(file_path: str) -> str:
+    def read_txt(self, file_path: str) -> str:
         """The function reads the file at the specified path and saves it to a variable
 
         Args:
@@ -80,7 +80,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while reading the file: {e}')
 
-    def write_bytes(file_path: str, data: str) -> None:
+    def write_bytes(self, file_path: str, data: str) -> None:
         """The function writes bytes into a file
         Args:
             file_path(str): path to file
@@ -92,7 +92,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while writing the file: {e}')
 
-    def read_bytes(file_path: str) -> str:
+    def read_bytes(self, file_path: str) -> str:
         """The function reads file data
         Args:
             file_path(str): path to file
@@ -106,7 +106,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while reading the file: {e}')
 
-    def serialize_symmetric_key(key: bytes, file_path: str) -> None:
+    def serialize_symmetric_key(self, key: bytes, file_path: str) -> None:
         """The function writes a symmetric key into a file
 
         Args:
@@ -119,7 +119,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error writing symmetric key to file: {e}')
 
-    def deserialize_symmetric_key(file_path: str) -> bytes:
+    def deserialize_symmetric_key(self, file_path: str) -> bytes:
         """The function deserializes the symmetric encryption key
         Args:
             file_path(str): file_path for deserialization
@@ -132,7 +132,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while deserialization the key: {e}')
 
-    def serialize_public_key(public_pem: str, public_key: rsa.RSAPublicKey) -> None:
+    def serialize_public_key(self, public_pem: str, public_key: rsa.RSAPublicKey) -> None:
         """The function makes the RSA public key serialization
         Args:
             public_pem(str): file_path for public RSA key serialization
@@ -149,7 +149,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while serialization the key: {e}')
 
-    def serialize_private_key(private_pem: str, private_key: rsa.RSAPrivateKey) -> None:
+    def serialize_private_key(self, private_pem: str, private_key: rsa.RSAPrivateKey) -> None:
         """The function serializes a RSA private key
         Args:
             private_pem(str): file_path for private RSA key serialization
@@ -167,7 +167,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while serialization the key: {e}')
 
-    def deserialize_public_key(public_pem: str) -> rsa.RSAPublicKey:
+    def deserialize_public_key(self, public_pem: str) -> rsa.RSAPublicKey:
         """The function deserializes a RSA public key
         Args:
             public_pem(str): file_path for public RSA key deserialization
@@ -181,7 +181,7 @@ class Io:
         except Exception as e:
             logging.error(f'Error while deserialization the key: {e}')
 
-    def deserialize_private_key(private_pem: str) -> rsa.RSAPrivateKey:
+    def deserialize_private_key(self,private_pem: str) -> rsa.RSAPrivateKey:
         """The function deserializes a RSA private key
         Args:
             private_pem(str): file_path for private RSA key deserialization

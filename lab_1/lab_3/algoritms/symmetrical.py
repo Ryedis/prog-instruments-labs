@@ -35,7 +35,7 @@ class SM4:
         pass
 
     @staticmethod
-    def generate_key() -> bytes:
+    def generate_key(self) -> bytes:
         """The function generates a fixed 128-bit key for SM4
 
         Returns:
@@ -47,6 +47,7 @@ class SM4:
 
     @staticmethod
     def encrypt(
+        self,
         text: str,
         path_to_key: str,
         path_to_encrypted: str,
@@ -81,6 +82,7 @@ class SM4:
 
     @staticmethod
     def decrypt(
+        self,
         symmetric: str,
         path_to_encrypted: str,
         path_to_decrypted: str,

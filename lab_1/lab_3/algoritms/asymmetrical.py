@@ -33,7 +33,7 @@ class RSA:
     def __init__(self):
         pass
 
-    def key_generation() -> tuple[rsa.RSAPublicKey, rsa.RSAPrivateKey]:
+    def key_generation(self) -> tuple[rsa.RSAPublicKey, rsa.RSAPrivateKey]:
         """The function generates asymmetric keys (public and private)
 
         Returns:
@@ -44,6 +44,7 @@ class RSA:
         return key.public_key(), key
 
     def encrypt(
+        self,
         public: str,
         path_to_key: str,
         path_to_encrypted: str
@@ -69,6 +70,7 @@ class RSA:
         logging.info(f"Encrypted symmetric key saved to {path_to_encrypted}")
 
     def decrypt(
+        self,
         private: str,
         path_to_encrypted: str,
         path_to_decrypted: str
