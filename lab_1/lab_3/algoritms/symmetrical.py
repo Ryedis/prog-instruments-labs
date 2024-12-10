@@ -8,7 +8,7 @@ from cryptography.hazmat.primitives import padding
 from algoritms.in_out_functions import Io
 
 logger = logging.getLogger()
-logger.setLevel("INFO")
+logger.setLevel(logging.INFO)
 
 
 class SM4:

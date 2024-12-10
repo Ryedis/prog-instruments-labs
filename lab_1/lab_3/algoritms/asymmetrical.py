@@ -8,7 +8,7 @@ from algoritms.in_out_functions import Io
 
 
 logger = logging.getLogger()
-logger.setLevel("INFO")
+logger.setLevel(logging.INFO)
 
 
 class RSA:
