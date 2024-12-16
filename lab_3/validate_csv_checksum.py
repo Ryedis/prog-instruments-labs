@@ -17,12 +17,12 @@ def is_invalid(regex_patterns: dict, data: list) -> bool:
     """
     return not all(re.match(regex_patterns[key], value) for key, value in zip(regex_patterns, data))
 
-def validate_csv(data, regex_patterns):
+def validate_csv(data: list, regex_patterns: dict) -> list[int]:
     """
         Returns indexes of all invalid rows
 
     Args:
-        pattern (dict):  patterns for text processing
+        patregex_patternstern (dict):  patterns for text processing
         data (list): csv file
 
     Returns:
@@ -30,9 +30,9 @@ def validate_csv(data, regex_patterns):
     """
     return [index for index, value in enumerate(data) if is_invalid(regex_patterns, value)]
 
-def serialize_result(file_path, variant, checksum):
+def serialize_result(file_path: str, variant: int, checksum: str) -> None:
     """
-    Fills in result.json data: option number and checksum.
+    Fills in result.json
 
     :param file_path: Path to the result file.json
     :param variant: Variant number
@@ -58,7 +58,7 @@ def read_csv(path: str) -> list[list[str]]:
     except Exception as e:
         print(f"Exception in read_csv: {e}")
 
-def read_json(path):
+def read_json(path: str) -> dict[str, str]:
     """
     Loads paths from a JSON file.
 
